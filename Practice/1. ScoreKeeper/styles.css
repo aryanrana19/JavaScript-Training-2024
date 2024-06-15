@@ -1,0 +1,65 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: antiquewhite;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  display: flex;
+  padding: 50px;
+  border-radius: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  height: fit-content;
+  /* background-color: ; */
+}
+
+.score-div{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+input{
+  width: 300px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.score-div label{
+  font-size: 24px;
+}
+
+.scores{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.control-buttons{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button{
+  padding: 5px;
+  cursor: pointer;
+}
+
+.win{
+  color: green;
+}
