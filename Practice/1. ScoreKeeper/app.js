@@ -1,3 +1,5 @@
+
+
 const p1Btn = document.querySelector(".p1-btn")
 const p2Btn = document.querySelector(".p2-btn")
 const p1Score = document.querySelector(".p1-score-display")
@@ -10,8 +12,11 @@ var p1Count = 1
 var p2Count = 1
 var matchLength = 5 
 
+alert("Game of " + matchLength)
+
 inputVal.addEventListener("change", function(){
   matchLength = inputVal.value
+  alert("Game of " + matchLength)
 })
 
 
@@ -46,4 +51,6 @@ resetBtn.addEventListener("click", function(){
   p2Score.textContent = 0
   p1Score.classList.remove("win")
   p2Score.classList.remove("win")
+  inputVal.value = ''
+  alert("Game of " + matchLength)
 })
