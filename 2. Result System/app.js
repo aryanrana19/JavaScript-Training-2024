@@ -5,13 +5,6 @@ const hindi = document.querySelector(".hindi")
 const english = document.querySelector(".english")
 const sst = document.querySelector(".sst")
 
-// CHECK REQUIRED FIELDS
-function checkRequired(inputArr){
-  inputArr.forEach(function(input){
-
-  })
-}
-
 // SHOW ERROR
 function showError(input,message){
   const formControl = input.parentElement
@@ -25,3 +18,25 @@ function showSuccess(input){
   const formControl = input.parentElement
   formControl.className = "form-control success"
 }
+
+// CHECK REQUIRED FIELDS
+function checkRequired(inputArr){
+  inputArr.forEach(function(input){
+    if(input.value === null){
+      showError(input, `${getFieldName()} is required`)
+    }else{
+      showSuccess(input)
+    }
+  })
+}
+
+// GET FIELD NAME
+function getFieldName(input){
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1)
+}
+
+// EVENT LISTENER
+form.addEventListener("submit", function(e){
+  e.preventDefault()
+  checkRequired([maths,science,sst,hindi,english])
+})
