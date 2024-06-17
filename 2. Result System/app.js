@@ -1,43 +1,27 @@
-var mathsMarks = document.querySelector(".maths")
-var scienceMarks = document.querySelector(".science")
-var socialScienceMarks = document.querySelector(".socialScience")
-var hindiMarks = document.querySelector(".hindi")
-var englishMarks = document.querySelector(".english")
-var submitBtn = document.querySelector(".submitBtn")
-var resultCard = document.querySelector(".result-container")
-var passingCriteria = document.querySelector(".result-container")[3]
+const form = document.getElementById("form")
+const maths = document.querySelector(".maths")
+const science = document.querySelector(".science")
+const hindi = document.querySelector(".hindi")
+const english = document.querySelector(".english")
+const sst = document.querySelector(".sst")
 
+// CHECK REQUIRED FIELDS
+function checkRequired(inputArr){
+  inputArr.forEach(function(input){
 
-submitBtn.addEventListener("click", function(){
-  if(mathsMarks.value == null){
-    alert("Enter valid Maths marks")
-  }else{
-    mathsMarks = mathsMarks.value
-  }
-  if(scienceMarks.value == null){
-    alert("Enter valid Science Marks")
-  }else{
-    scienceMarks = scienceMarks.value
-  }
-  if(socialScienceMarks == null){
-    alert("Enter valid Social Science Marks")
-  }else{
-    socialScienceMarks = socialScienceMarks.value
-  }
-  if(hindiMarks == null){
-    alert("Enter valid Hindi Marks")
-  }else{
-    hindiMarks = hindiMarks.value
-  }
-  if(englishMarks == null){
-    alert("Enter valid English Marks")
-  }else{
-    englishMarks = englishMarks.value
-  }
-})
+  })
+}
 
+// SHOW ERROR
+function showError(input,message){
+  const formControl = input.parentElement
+  formControl.className = "form-control error"
+  const small = formControl.querySelector("small")
+  small.innerText = message
+}
 
-function calculatePercentage(a,b,c,d,e){
-  var percentageVal = ((a+b+c+d+e)/5) + "%"
-  return percentageVal
+// SHOW SUCCESS
+function showSuccess(input){
+  const formControl = input.parentElement
+  formControl.className = "form-control success"
 }
