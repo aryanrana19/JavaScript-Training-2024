@@ -44,8 +44,8 @@ p2Btn.addEventListener("click", function(){
 
 resetBtn.addEventListener("click", function(){
   gameOver = false
-  p1Count = 0
-  p2Count = 0
+  p1Count = 1
+  p2Count = 1
   matchLength = 5
   p1Score.textContent = 0
   p2Score.textContent = 0
