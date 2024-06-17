@@ -4,9 +4,22 @@ const email = document.getElementById("email")
 const password = document.getElementById("password")
 const password2 = document.getElementById("password2")
 
+
+function showError(input,message){
+  const formControl = input.parentElement
+  formControl.className = "form-control error"
+  const small = formControl.querySelector('small')
+  small.innerText = message
+}
+function showSuccess(input){
+  const formControl = input.parentElement
+  formControl.className = "form-control success"
+}
+
 form.addEventListener("submit",function(e){
   e.preventDefault()
-  if(username === ''){
+
+  if(username.value === ''){
     showError(username, "Username is required")
   }else{
     showSuccess(username)
@@ -14,8 +27,6 @@ form.addEventListener("submit",function(e){
   
   if(email.value === ''){
     showError(email, "Email is required")
-  }else if(!isValidEMail(email.value)){
-    showError(email, "Email is not valid")
   }else{
     showSuccess(email)
   }
@@ -26,9 +37,13 @@ form.addEventListener("submit",function(e){
     showSuccess(password)
   }
   
-  if(password2 === ''){
+  if(password2.value === ''){
     showError(password2, "Confirm Password is required")
   }else{
     showSuccess(password2)
   }
 })
+
+
+
+
