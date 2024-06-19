@@ -96,6 +96,7 @@ body{
 
 .form-control.error small{
   color: var(--error-color);
+  visibility:visible;
 }
 
 .form-control.success small{

@@ -22,8 +22,8 @@ function showSuccess(input){
 // CHECK REQUIRED FIELDS
 function checkRequired(inputArr){
   inputArr.forEach(function(input){
-    if(input.value === null){
-      showError(input, `${getFieldName()} is required`)
+    if(input.value == ''){
+      showError(input, `${getFieldName(input)} marks are required`)
     }else{
       showSuccess(input)
     }
