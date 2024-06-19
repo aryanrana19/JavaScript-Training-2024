@@ -1,6 +1,6 @@
 :root{
-  --success-color: rgb(54, 199, 54);
-  --error-color: rgb(198, 51, 51);
+  --success-color: rgb(14, 206, 14);
+  --error-color: rgb(205, 39, 39);
 }
 
 *{
@@ -9,7 +9,7 @@
 }
 
 body{
-  background-color: #240750;
+  background-color: #5955b2;
   padding: 50px;
   color: #fff;
   /* height: 100vh; */
@@ -27,33 +27,11 @@ body{
   flex-flow: column;
   width: 100%;
   height: fit-content;
-  border: 2px solid #fff;
+  border: 5px solid #fff;
+  border-radius: 25px;
   padding: 15px;
   gap: 15px;
 }
-
-/* .input-container label{
-  font-size: 18px;
-}
-
-.input-container input{
-  height: 25px;
-  font-size: 16px;
-}
-
-.input-container button{
-  height: 50px;
-  cursor: pointer;
-  background-color: #003C43;
-  border: none;
-  color: #fff;
-  font-size: 18px;
-  text-transform: uppercase;
-}
-
-.input-container button:hover{
-  opacity: 0.8;
-} */
 
 .form{
   padding: 20px;
@@ -67,40 +45,46 @@ body{
 
 .form-control{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   gap: 10px;
   padding-top: 25px;
 }
 
 .form-control label{
-  font-size: 18px;
+  font-size: 20px;
+  text-transform: uppercase;
   padding-bottom: 5px;
 }
 
 .form-control input{
+  border-radius: 5px;
   height: 20px;
+  font-size: 18px;
   /* border: solid 2px white; */
-  padding: 5px;
-  width: 60%;
+  border: 4px solid white;
+  padding: 10px 0px;
+  width: 100%;
 }
 
 .form-control input:focus{
   outline: 0;
-  border: 3px solid rgb(247, 156, 77);
+  border: 4px solid rgb(247, 156, 77);
 }
 
 .form-control small{
   padding: 10px 0px;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 .form-control.success input{
-  border: 3px solid var(--success-color);
+  border-radius: 5px;
+  border: 4px solid var(--success-color);
 }
 
 .form-control.error input{
-  border: 3px solid var(--error-color);
+  border-radius: 5px;
+  border: 4px solid var(--error-color);
 }
 
 .form-control.error small{
@@ -118,9 +102,16 @@ body{
   width: 100%;
   cursor: pointer;
   border-radius: 5px;
-  border: 2px solid #fff;
+  border: 4px solid #fff;
   outline: 0;
   font-size: 18px;
+}
+
+.form button:hover{
+  background-color: #5955b2;
+  color: #fff;
+  /* border: 4px solid #5955b2; */
+  transition: ease-in 0.3s;
 }
 
 .result-container{
