@@ -1,24 +1,29 @@
 // UI Design vars
 const form = document.querySelector("#task-form")
-const taskList = document.querySelector(".collections")
+const taskList = document.querySelector(".collection")
 const clearBtn = document.querySelector(".clear-tasks")
 const filter = document.querySelector("#filter")
 const taskInput = document.querySelector('#task')
 
 // Load all event listeners
-loadEventListeners()
-// Load all event listeners
+// loadEventListeners()
 
-function loadEventListeners(){
-  // Add Task Event
-  form.addEventListener("submit", addTask)
-  // Remove Task Event
-  taskList.addEventListener("click", removeTask)
-  // Clear Task
-  clearBtn.addEventListener("click", clearTasks)
-  // Filter Task Events
-  filter.addEventListener('keyup', filterTasks)
-}
+// function loadEventListeners(){
+//   // Add Task Event
+//   form.addEventListener("submit", addTask)
+//   // Remove Task Event
+//   taskList.addEventListener("click", removeTask)
+//   // Clear Task
+//   clearBtn.addEventListener("click", clearTasks)
+//   // Filter Task Events
+//   filter.addEventListener('keyup', filterTasks)
+// }
+
+
+form.addEventListener("submit", (addTask))
+taskList.addEventListener("click", removeTask)
+clearBtn.addEventListener("click", clearTasks)
+filter.addEventListener('keyup', filterTasks)
 
 // ADD TASK
 function addTask(e){
@@ -40,9 +45,7 @@ function addTask(e){
   // APPEND LINK TO li
   li.appendChild(link)
   // APPEND li TO ul
-  taskList.appendChild('li')
-  // STORE IN LS
-  storeTaskInLocalStorage(taskInput.value)
+  taskList.appendChild(li)
   // CLEAR INPUT
   taskInput.value = ''
   e.preventDefault()
@@ -59,23 +62,24 @@ function removeTask(e){
 
 // CLEAR TASKS
 function clearTasks(){
-  // taskList.innerHTML = ''
+  taskList.innerHTML = ''
   
   // FASTER
-  while(taskList.firstChild){
-    taskList.removeChild(taskList.firstChild)
-  }
+  // while(taskList.firstChild){
+  //   taskList.removeChild(taskList.firstChild)
+  // }
 }
 
-// FILTER TASKS
+// // FILTER TASKS
 function filterTasks(e){
   const text = e.target.value.toLowerCase()
+
   document.querySelectorAll('.collection-item').forEach(function(task){
     const item = task.firstChild.textContent
     if(item.toLowerCase().indexOf(text) != -1){
       task.style.display = 'block'
     }else{
-      text.style.display = 'none'
+      task.style.display = 'none'
     }
   })
 }
