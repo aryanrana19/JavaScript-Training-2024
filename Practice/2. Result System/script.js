@@ -42,8 +42,9 @@ form.addEventListener("submit", function(e){
   e.preventDefault()
   checkRequiredFields([maths,science,sst,hindi,english])
   percentageCal([maths,science,sst,hindi,english])
-  passingCriteria(percentage)
+  passingCriteria(percentageCal([maths,science,sst,hindi,english]))
 })
+
 
 // PERCENTAGE CALCULATOR
 function percentageCal(inputArr){
@@ -54,20 +55,22 @@ function percentageCal(inputArr){
       totalMarks += marks
     }
   })
-  console.log(totalMarks)
+  // console.log(totalMarks)
   const percentage = totalMarks/5
-  console.log(percentage)
+  // console.log(percentage)
   percent.textContent = `${percentage}%`
-  // return percentage
+  return percentage
 }
 
-const percentage = percentageCal([maths,science,sst,hindi,english])
 
 // PASSING CRITERIA
 function passingCriteria(percentage){
     if(percentage >= 35){
       passOrFail.textContent = "Passed"
+      console.log("passed")
     }else{
       passOrFail.textContent = "Failed"
+      console.log("failed")
     }
 }
+
