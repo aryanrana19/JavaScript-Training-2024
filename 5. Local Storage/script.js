@@ -16,8 +16,8 @@ console.log(name)
 // console.log(age)
 
 // REMOVE FROM STORAGE
-localStorage.clear()
-console.log(name,age)
+// localStorage.clear()
+// console.log(name,age)
 
 // ADD TASK TO LOCAL STORAGE via FORM
 // SUBMIT EVENT
@@ -47,3 +47,6 @@ const tasks = JSON.parse(localStorage.getItem('tasks'))
 tasks.forEach(function(task){
   console.log(task)
 })
+
+
+

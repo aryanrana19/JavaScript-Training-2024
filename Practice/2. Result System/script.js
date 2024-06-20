@@ -4,8 +4,13 @@ const science = document.querySelector(".science")
 const hindi = document.querySelector(".hindi")
 const english = document.querySelector(".english")
 const sst = document.querySelector(".sst")
+const inputArr = [maths, science, sst, hindi, english]
+const resultContainer = document.querySelector(".result-container")
 let passOrFail = document.querySelector(".pass-criteria")
-var percent = document.querySelector(".percentage")
+let percent = document.querySelector(".percentage")
+let grade = document.querySelector(".grade")
+
+
 
 // SHOW ERROR FUNCTION
 function showError(input, message){
@@ -28,6 +33,7 @@ function checkRequiredFields(inputArr){
       showError(input, `${getFieldName(input)} marks required`)
     }else{
       showSuccess(input)
+      resultContainer.classList.add("show")
     }
   })
 }
@@ -40,9 +46,10 @@ function getFieldName(input){
 // FORM SUBMIT
 form.addEventListener("submit", function(e){
   e.preventDefault()
-  checkRequiredFields([maths,science,sst,hindi,english])
-  percentageCal([maths,science,sst,hindi,english])
-  passingCriteria(percentageCal([maths,science,sst,hindi,english]))
+  checkRequiredFields(inputArr)
+  const result = percentageCal(inputArr)
+  passingCriteria(result)
+  gradingSystem(result)
 })
 
 
@@ -57,11 +64,10 @@ function percentageCal(inputArr){
   })
   // console.log(totalMarks)
   const percentage = totalMarks/5
-  // console.log(percentage)
+  console.log(percentage)
   percent.textContent = `${percentage}%`
   return percentage
 }
-
 
 // PASSING CRITERIA
 function passingCriteria(percentage){
@@ -71,6 +77,27 @@ function passingCriteria(percentage){
     }else{
       passOrFail.textContent = "Failed"
       console.log("failed")
+    }
+}
+
+// GRADING SYSTEM
+function gradingSystem(overallPercentage){
+  switch (true) {
+    case (overallPercentage >= 90):
+        grade.textContent = 'A';
+        break;
+    case (overallPercentage >= 80):
+        grade.textContent = 'B';
+        break;
+    case (overallPercentage >= 70):
+        grade.textContent = 'C';
+        break;
+    case (overallPercentage >= 60):
+        grade.textContent = 'D';
+        break;
+    default:
+        grade.textContent = 'F';
+        break;
     }
 }
 
