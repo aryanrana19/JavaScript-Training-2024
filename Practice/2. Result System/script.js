@@ -5,6 +5,7 @@ const hindi = document.querySelector(".hindi")
 const english = document.querySelector(".english")
 const sst = document.querySelector(".sst")
 let passOrFail = document.querySelector(".pass-criteria")
+var percent = document.querySelector(".percentage")
 
 // SHOW ERROR FUNCTION
 function showError(input, message){
@@ -41,7 +42,7 @@ form.addEventListener("submit", function(e){
   e.preventDefault()
   checkRequiredFields([maths,science,sst,hindi,english])
   percentageCal([maths,science,sst,hindi,english])
-  passingCriteria(percentageCal([maths,science,sst,hindi,english]))
+  passingCriteria(percentage)
 })
 
 // PERCENTAGE CALCULATOR
@@ -56,22 +57,17 @@ function percentageCal(inputArr){
   console.log(totalMarks)
   const percentage = totalMarks/5
   console.log(percentage)
-  return percentage
+  percent.textContent = `${percentage}%`
+  // return percentage
 }
+
+const percentage = percentageCal([maths,science,sst,hindi,english])
 
 // PASSING CRITERIA
 function passingCriteria(percentage){
-    if(percentage < 35){
-      passOrFail.textContent = "Failed"
-    }else{
+    if(percentage >= 35){
       passOrFail.textContent = "Passed"
+    }else{
+      passOrFail.textContent = "Failed"
     }
-}
-
-// GRADING SYSTEM
-function grade(percentage){
-  switch(percentage){
-    case 1:
-      percentage > 90
-  }
 }
