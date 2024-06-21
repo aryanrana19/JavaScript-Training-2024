@@ -1,11 +1,12 @@
 const form = document.querySelector(".form")
 const taskInput = document.querySelector(".task-input")
 const taskList = document.querySelector(".tasks")
-
+const task = document.querySelector(".task-field h3")
 
 
 form.addEventListener("submit", (addTask))
 
+// ADDING A TASK
 function addTask(e){
   if(taskInput.value === ''){
     alert('Add a Task')
@@ -33,4 +34,10 @@ function addTask(e){
   e.preventDefault()
 }
 
-// REMOVE 
+// TASK DONE
+task.addEventListener("click", function(){
+  task.classList.add("check")
+  alert("HEllo")
+})
+
+// REMOVING THE TASK

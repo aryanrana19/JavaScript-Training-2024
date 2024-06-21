@@ -38,6 +38,14 @@ body{
   height: 75px;
 }
 
+.task-field h3{
+  cursor: pointer;
+}
+
+.check{
+  text-decoration: line-through;
+}
+
 .add-field{
   width: 100%;
   display: flex;
