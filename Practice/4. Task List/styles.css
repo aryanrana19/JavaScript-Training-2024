@@ -17,6 +17,15 @@ body{
   width: 50%;
   height: fit-content;
   text-align: center;
+  height: fit-content;
+}
+
+.tasks{
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .task-field{
@@ -26,6 +35,7 @@ body{
   justify-content: space-between;
   padding: 0px 15px;
   border-bottom: 5px solid black;
+  height: 75px;
 }
 
 .add-field{
