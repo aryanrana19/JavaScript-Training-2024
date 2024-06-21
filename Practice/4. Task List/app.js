@@ -14,7 +14,7 @@ function addTask(e){
     const taskField = document.createElement("div")
     // ADD ITS CLASS
     taskField.className = "task-field"
-    // CREATE TASK NAME ELEMENET
+    // CREATE TASK NAME ELEMENT
     const h3 = document.createElement("h3")
     h3.textContent = taskInput.value
     console.log(taskInput.value)
@@ -32,3 +32,5 @@ function addTask(e){
   }
   e.preventDefault()
 }
+
+// REMOVE 
