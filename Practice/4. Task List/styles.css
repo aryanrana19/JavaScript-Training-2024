@@ -15,7 +15,6 @@ body{
   background-color: #F1F8E8;
   margin: 0;
   width: 50%;
-  height: fit-content;
   text-align: center;
   height: fit-content;
 }
@@ -29,6 +28,7 @@ body{
 }
 
 .task-field{
+  text-align: left;
   background-color: #55AD9B;
   display: flex;
   align-items: center;
@@ -36,6 +36,7 @@ body{
   padding: 0px 15px;
   border-bottom: 5px solid black;
   height: 75px;
+  gap: 15px;
 }
 
 .task-field h3{

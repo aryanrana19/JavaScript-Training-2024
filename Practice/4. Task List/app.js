@@ -1,7 +1,7 @@
 const form = document.querySelector(".form")
 const taskInput = document.querySelector(".task-input")
 const taskList = document.querySelector(".tasks")
-const task = document.querySelector(".task-field h3")
+const task = document.querySelectorAll(".task-field h3")
 
 
 form.addEventListener("submit", (addTask))
@@ -35,9 +35,7 @@ function addTask(e){
 }
 
 // TASK DONE
-task.addEventListener("click", function(){
-  task.classList.add("check")
-  alert("HEllo")
-})
+
 
 // REMOVING THE TASK
+
