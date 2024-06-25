@@ -57,7 +57,7 @@ body{
   left: 50%;
   width: 30px;
   height: 30px;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 10%);
 }
 .music-container.play .img-container img{
   animation-play-state: running;

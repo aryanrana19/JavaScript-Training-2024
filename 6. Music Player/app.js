@@ -12,7 +12,7 @@ const cover = document.getElementById('cover')
 const songs = ['Everglow', 'Sunflower', 'Blinding Lights']
 
 // KEEP TRACK OF SONGS
-let songIndex = 2
+let songIndex = 0
 
 // INITIALLY LOAD SONG DETAILS INTO DOM
 loadSong(songs[songIndex])
@@ -20,7 +20,7 @@ loadSong(songs[songIndex])
 // UPDATE SONG DETAILS
 function loadSong(song){
   title.innerHTML = song
-  audio.src = `assets/${song}.m4a`
+  audio.src = `assets/${song}.mp3`
   cover.src = `assets/${song}.jpg`
 }
 
@@ -35,8 +35,8 @@ function playSong(){
 // PAUSE SONG
 function pauseSong(){
   musicContainer.classList.remove("play")
-  playBtn.querySelector('i-fa').classList.add('fa-play')
-  playBtn.querySelector('i-fa').classList.remove('fa-pause')
+  playBtn.querySelector('i.fa').classList.add('fa-play')
+  playBtn.querySelector('i.fa').classList.remove('fa-pause')
   audio.pause()
 }
 
@@ -53,16 +53,17 @@ function prevSong(){
 // NEXT SONG
 function nextSong(){
   songIndex++
-  if(songIndex > songs.index - 1){
+  if(songIndex > songs.length - 1){
     songIndex = 0
   }
-  loadSong(song[songIndex])
+  loadSong(songs[songIndex])
   playSong()
 }
 
 // UPDATE TIME 
 function updateProgress(e){
   const{duration, currentTime} = e.srcElement
+  const progressPercent = (currentTime/duration)*100
   progress.style.width = `${progressPercent}%`
 }
 
@@ -71,7 +72,7 @@ function setProgress(e){
   const width = this.clientWidth
   const ClickX = e.offsetX
   const duration = audio.duration
-  audio.currentTime = (clickX/width) * duration
+  audio.currentTime = (ClickX/width) * duration
 }
 
 // EVENT LISTENERS

@@ -82,7 +82,6 @@ function clearTasks(){
 // // FILTER TASKS
 function filterTasks(e){
   const text = e.target.value.toLowerCase()
-
   document.querySelectorAll('.collection-item').forEach(function(task){
     const item = task.firstChild.textContent
     if(item.toLowerCase().indexOf(text) != -1){
@@ -140,10 +139,10 @@ function removeFromLocalStorage(taskItem){
   }
   tasks.forEach(function(task, index){
     if(taskItem.textContent === task){
-      tasks.slice(index, 1)
+      tasks.splice(index, 1)
     }
   })
-  localStorage.setItem('tasks', JSON.stringify('tasks'))
+  localStorage.setItem('tasks', JSON.stringify(tasks))
 }
 
 
