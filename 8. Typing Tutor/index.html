@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Tutor</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <button id="settings-btn" class="settings-btn">
+    <i class="fa fa-cog"></i>
+  </button>
+  <div class="settings" id="settings">
+    <form class="settings-form">
+      <label for="difficulty">Difficulty</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </form>
+  </div>
+  <div class="container">
+    <h2>Typing Trainer</h2>
+    <small>Type the word</small>
+    <h1 id="word"></h1>
+    <input type="text" id="text" placeholder="Type the Word" autocomplete="off">
+    <p class="time-container">Time Left: <span id="time">10s</span></p>
+    <p class="score-container">Score: <span id="score">0</span></p>
+    <p id="end-game-container" class="end-game-container"></p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
