@@ -39,7 +39,7 @@ button{
   transition: transform 0.3s ease-in-out;
 }
 
-.settings-hide{
+.settings.hide{
   transform: translateY(-100%);
 }
 
@@ -54,6 +54,10 @@ select{
 }
 
 select:focus, button:focus{
+  outline: 0;
+}
+
+input{
   outline: 0;
 }
 
