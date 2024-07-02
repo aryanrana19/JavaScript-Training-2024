@@ -1,5 +1,5 @@
 const postContainer = document.getElementById("post-container")
-const loading = document.querySelector(".laoder")
+const loading = document.querySelector(".loader")
 const filter = document.querySelector("#filter")
 
 let limit = 5
@@ -60,8 +60,8 @@ function filterPosts(e){
 showPosts()
 
 window.addEventListener("scroll", ()=>{
-  const{scrollTop, scrollheight, clientHeight} = document.documentElement
-  if(scrollTop + clientHeight >= scrollheight - 5){
+  const{scrollTop, scrollHeight, clientHeight} = document.documentElement
+  if(scrollTop + clientHeight >= scrollHeight - 5){
     showLoading()
   }
 })
